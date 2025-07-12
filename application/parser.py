@@ -30,7 +30,7 @@ def parse_input(lines: Iterable[str]) -> tuple[RectangularGrid, list[tuple[Robot
     try:
         grid = parse_workspace(next(lines))
     except StopIteration:
-        raise ValueError("No workspace line provided")
+        raise ValueError('No workspace line provided')
 
     robot_instructions = []
 
@@ -46,7 +46,7 @@ def parse_input(lines: Iterable[str]) -> tuple[RectangularGrid, list[tuple[Robot
         try:
             command_line = next(lines).strip()
         except StopIteration:
-            raise ValueError(f"Missing command line for robot at position: {robot_line}")
+            raise ValueError(f'Missing command line for robot at position: {robot_line}')
 
         robot = parse_robot(robot_line)
         commands = parse_commands(command_line)

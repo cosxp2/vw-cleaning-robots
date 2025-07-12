@@ -1,3 +1,4 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from domain.orientation import Orientation
 
@@ -6,7 +7,7 @@ class Position:
     x: int
     y: int
     
-    def move(self, orientation: Orientation) -> 'Position':
+    def move(self, orientation: Orientation) -> Position:
         match orientation:
             case Orientation.NORTH:
                 return Position(self.x, self.y + 1)
@@ -20,5 +21,5 @@ class Position:
                 raise ValueError(f'Invalid orientation: {orientation}')
     
     # I could create an alias if necessarry:
-    def move_north(self) -> 'Position':
+    def move_north(self) -> Position:
         self.move(Orientation.NORTH)

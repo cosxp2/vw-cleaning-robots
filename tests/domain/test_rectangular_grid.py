@@ -37,17 +37,17 @@ def test_grid_rejects_negative_y():
     with pytest.raises(ValueError):
         RectangularGrid(5, -5)
 
-def test_grid_empty():
+def test_grid_rejects_zero_dimensions():
     with pytest.raises(ValueError):
         RectangularGrid(0, 0)
 
-def test_grid_horizontal_stripe():
+def test_grid_accepts_horizontal_stripe():
     grid = RectangularGrid(5, 0)
     assert grid.is_valid_position(Position(0, 0))
     assert grid.is_valid_position(Position(5, 0))
     assert not grid.is_valid_position(Position(5, 1))
 
-def test_grid_vertical_stripe():
+def test_grid_accepts_vertical_stripe():
     grid = RectangularGrid(0, 5)
     assert grid.is_valid_position(Position(0, 0))
     assert grid.is_valid_position(Position(0, 5))

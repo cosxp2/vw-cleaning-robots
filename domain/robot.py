@@ -32,6 +32,10 @@ class Robot():
                 self.move_forward()
             case _:
                 raise ValueError(f'Invalid command: {command}')
+    
+    def execute_all(self, commands: list[Command], workspace: WorkspaceShape) -> None:
+        for command in commands:
+            self.execute(command, workspace)
             
     def __str__(self):
         return f'{self.position.x} {self.position.y} {self.orientation}'

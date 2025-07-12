@@ -29,7 +29,7 @@ class Robot():
             case Command.RIGHT:
                 self.turn_right()
             case Command.MOVE:
-                self.move_forward()
+                self.move_forward(workspace)
             case _:
                 raise ValueError(f'Invalid command: {command}')
     

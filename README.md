@@ -60,6 +60,14 @@ pipenv run pytest
 
 ## Design Decisions
 
+### Domain Model Benefits
+The domain model encapsulates logic within cohesive objects:
+- Position handles coordinate movement based on orientation
+- Orientation defines valid directions and supports turning left/right
+- Command maps input strings to robot actions in a type-safe way
+- Robot maintains its own state and executes commands internally
+- WorkspaceShape and RectangularGrid abstract spatial constraints
+
 ### Abstract Shape Class
 To consider an extension of the architecture, the grid shape is defined via an abstract base class (`WorkspaceShape`). This allows support for other grid types (e.g., circular, L shaped) without changing the domain logic
 

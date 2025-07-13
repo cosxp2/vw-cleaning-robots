@@ -16,3 +16,6 @@ dist/
 
 # Test cache
 .pytest_cache/
+
+# Logs
+*.log

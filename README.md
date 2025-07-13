@@ -48,7 +48,8 @@ pipenv install
 ### 2. Run via CLI
 
 ```bash
-pipenv run python adapters/cli/main.py < examples/test_input.txt
+chmod +x scripts/run_cli.sh 
+./scripts/run_cli.sh examples/<test_file.txt>
 ```
 
 ### 3. Run Tests

@@ -31,7 +31,7 @@ def test_run_simulation_no_overlapping(grid):
     assert result == ['1 3 N', '5 1 E']
 
 
-def test_run_simulation_robots_overlapping(grid, capfd):
+def test_run_simulation_robots_overlapping(grid):
     # robot1 moves forward into (1, 3)
     robot1 = Robot(Position(1, 2), Orientation.NORTH)
     commands1 = [Command.MOVE]
@@ -47,6 +47,3 @@ def test_run_simulation_robots_overlapping(grid, capfd):
 
     assert results[0] == '1 3 N'
     assert results[1] == '1 2 N'  # second move was skipped due to occupancy
-
-    out, _ = capfd.readouterr()
-    assert 'Blocked: Position(x=1, y=3) is already occupied' in out

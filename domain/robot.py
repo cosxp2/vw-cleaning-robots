@@ -18,9 +18,6 @@ class Robot():
         next_position = self.position.move(self.orientation)
         if workspace.is_valid_position(next_position):
             self.position = next_position
-        else:
-            print('Desired position is outside workspace boundaries. \
-                    Please provide a valid position')
     
     def execute(self, command: Command, workspace: WorkspaceShape) -> None:
         match command:

@@ -58,6 +58,12 @@ chmod +x scripts/run_cli.sh
 pipenv run pytest
 ```
 
+### 4. Check Logs
+
+```bash
+tail -f simulation.log 
+```
+
 ## Design Decisions
 
 ### Domain Model Benefits

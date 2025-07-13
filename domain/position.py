@@ -20,6 +20,3 @@ class Position:
             case _:
                 raise ValueError(f'Invalid orientation: {orientation}')
     
-    # I could create an alias if necessarry:
-    def move_north(self) -> Position:
-        self.move(Orientation.NORTH)

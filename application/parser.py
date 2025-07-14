@@ -49,6 +49,9 @@ def parse_input(lines: Iterable[str]) -> tuple[RectangularGrid, list[tuple[Robot
             raise ValueError(f'Missing command line for robot at position: {robot_line}')
 
         robot = parse_robot(robot_line)
+        if not grid.is_valid_position(robot.position):
+            raise ValueError(f'Robot starts at invalid position: {robot.position}')
+        
         commands = parse_commands(command_line)
 
         robot_instructions.append((robot, commands))
